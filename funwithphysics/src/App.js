@@ -51,6 +51,7 @@ import Calpermutation from "./Components/Algebra/Topic/Calculator";
 import CalcComplexNumber from "./Components/Algebra/Topic/Calculator";
 import Calstraightline from "./Components/Geometry/Topic/Calculator";
 import CalCircle from "./Components/Geometry/Topic/Calculator";
+import CalHyperbola from "./Components/Geometry/Topic/Calculator";
 import { useNavigate } from "react-router-dom";
 const Home = lazy(() => {
   return Promise.all([
@@ -272,6 +273,11 @@ const App = () => {
             exact
             path="/geometry/calc/:topic"
             element={<CalCircle />}
+          ></Route>
+          <Route
+            exact
+            path="/geometry/calc/:topic"
+            element={<CalHyperbola />}
           ></Route>
           <Route
             exact

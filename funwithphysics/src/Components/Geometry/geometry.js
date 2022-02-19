@@ -30,6 +30,12 @@ export default function Algebra() {
       details: "",
       formula: "",
       process: "",
+    },
+    {
+      topic: "Hyperbola",
+      details: "",
+      formula: "",
+      process: "",
     }
   ];
 
