@@ -153,14 +153,8 @@ function Calculator() {
       formula: "The Equation of Circle : (x-h)² + (y-k)² = r²",
       process: [
         "To find the standard equation of a circle, we will be needing the coordinates of the center of the circle (h,k) and its radius (r).",
-<<<<<<< HEAD
       ],
-        example:[
-=======
-        <br />,
-      ],
-      example1: [
->>>>>>> e0f5b6b7ee6606c832c23bceb33711b88747ed31
+        example1:[
         <b>E.g. </b>,
         "Find the equation of a circle if point (1,2) is the center of the circle and it’s radius is equal to 4 cm.",
         <br />,
@@ -174,7 +168,6 @@ function Calculator() {
         <br />,
         <b>x²+y²−2x−4y-11 = 0 </b>,
         <br />,
-<<<<<<< HEAD
         "Hence, this is the required standard equation of the given circle."
         ]
       
@@ -197,7 +190,7 @@ function Calculator() {
       process: [
         "To find the equation of a hyperbola in the standard form with center (h,k) we need two vertices and foci.",
         <br />],
-        example:[
+        example1:[
           "Find the standard form equation of the hyperbola that has vertices at (0,−2) and (6,−2) and foci at (−2,−2) and (8,−2)?",
         <br />,
         "The y-coordinates of the vertices and foci are the same, so the transverse axis is parallel to the x-axis. Thus, the equation of the hyperbola will have the form",
@@ -208,8 +201,9 @@ function Calculator() {
         <br />,
         "Next, we find a². The length of the transverse axis, 2a, is bounded by the vertices. So, we can find a² by finding the distance between the x-coordinates of the vertices.",
         <br />,
-        "2a = |0-6| => 2a = 6 => a = 3 => a² = 9",
-        <br />,
+        "2a = |0-6| => 2a = 6 => a = 3 => a² = 9"
+        ],
+        example2:[
         "Now we need to find c². The coordinates of the foci are (h±c,k). So, (h-c,k) = (-2,-2) and (h+c,k) = (8,-2)",
         <br />,
         "We can use the x-coordinate from either of these points to solve for c. Using the point (8,−2), and substituting h=3,",
@@ -223,14 +217,8 @@ function Calculator() {
         "Finally, after substituting the values, the standard equation is :",
         <br />,
         <strong>(x-3)²/9 - (y+2)²/16 = 1</strong>
-
         ]
     }
-=======
-        "Hence, this is the required standard equation of the given circle.",
-      ],
-    },
->>>>>>> e0f5b6b7ee6606c832c23bceb33711b88747ed31
   ];
 
   const page = Topics.filter((data) => data.topic === topic);
@@ -1324,7 +1312,6 @@ function Calculator() {
       </>
     );
   };
-<<<<<<< HEAD
 //Hyperbola
 const Hyperbola = () => {
   const [v11, setV11] = useState(null);
@@ -1673,9 +1660,6 @@ const Hyperbola = () => {
     </>
   );
 }
-=======
-
->>>>>>> e0f5b6b7ee6606c832c23bceb33711b88747ed31
   //adding the calculators togather
   function calC(key) {
     let currentCall;
@@ -1692,13 +1676,9 @@ const Hyperbola = () => {
       case "Circle":
         currentCall = Circle();
         break;
-<<<<<<< HEAD
       case "Hyperbola":
         currentCall = Hyperbola();
         break;
-=======
-
->>>>>>> e0f5b6b7ee6606c832c23bceb33711b88747ed31
       default:
         break;
     }

@@ -297,7 +297,6 @@ const App = () => {
           element={<Calstraightline />}
         ></Route>
           <Route
-<<<<<<< HEAD
             exact
             path="/classicalmechanics/calc/:topic"
             element={<CalcClassic />}
@@ -372,57 +371,6 @@ const App = () => {
             path="/electromagnetism/calc/:topic"
             element={<CalculatorElec />}
           ></Route>
-=======
-          exact
-          path="/geometry/calc/:topic"
-          element={<CalCircle />}
-        ></Route>
-        <Route
-          exact
-          path="/thermodynamics/calc/:topic"
-          element={<CalcThermo />}
-        ></Route>
-        <Route
-          exact
-          path="/classicalmechanics/calc/gravitation/:topic"
-          element={<GravitationCalculator />}
-        ></Route>
-        <Route
-          exact
-          path="/classicalmechanics/calc/moment_of_inertia/:topic"
-          element={<MOICalculator />}
-        ></Route>
-        <Route
-          exact
-          path="/classicalmechanics/calc/shm/:topic"
-          element={<ShmCalculator />}
-        ></Route>
-        <Route
-          exact
-          path="/classicalmechanics/calc/work_power_energy/:topic"
-          element={<WPECalculator />}
-        ></Route>
-        <Route
-          exact
-          path="/classicalmechanics/calc/rotation/:topic"
-          element={<RotationCalculator />}
-        ></Route>
-        <Route
-          exact
-          path="/electromagnetism"
-          element={
-            <>
-              <Navbar />
-              <Electromagnetism />
-            </>
-          }
-        ></Route>
-        <Route
-          exact
-          path="/electromagnetism/calc/:topic"
-          element={<CalculatorElec />}
-        ></Route>
->>>>>>> e0f5b6b7ee6606c832c23bceb33711b88747ed31
 
         <Route
           exact

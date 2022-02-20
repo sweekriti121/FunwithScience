@@ -30,7 +30,6 @@ export default function Algebra() {
       details: "",
       formula: "",
       process: "",
-<<<<<<< HEAD
     },
     {
       topic: "Hyperbola",
@@ -38,11 +37,6 @@ export default function Algebra() {
       formula: "",
       process: "",
     }
-=======
-
-    },
-
->>>>>>> e0f5b6b7ee6606c832c23bceb33711b88747ed31
   ];
 
   return (
