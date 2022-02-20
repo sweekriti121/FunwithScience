@@ -1,5 +1,4 @@
-import { Routes, Route } from "react-router-dom";
-import SlideRoutes from "react-slide-routes";
+import { Routes, Route} from "react-router-dom";
 import "./index.css";
 import reducer, { initialstate } from "./reducer";
 import FPassword from "./Components/Forgot_Password/fpassword";
@@ -53,6 +52,11 @@ import Calstraightline from "./Components/Geometry/Topic/Calculator";
 import CalCircle from "./Components/Geometry/Topic/Calculator";
 import CalHyperbola from "./Components/Geometry/Topic/Calculator";
 import { useNavigate } from "react-router-dom";
+import Integration from "./Components/Integration/integration";
+import CalContinuity from "./Components/Integration/Topic/Calculator";
+import Trigonometry from "./Components/Trigonometry/trigonometry";
+import CalTrigonometryFunctions from "./Components/Trigonometry/Topic/Calculator";
+
 const Home = lazy(() => {
   return Promise.all([
     import("./Components/Home/Home"),
@@ -102,12 +106,28 @@ const App = () => {
           setdifficult,
           difficult,
         }}
-      >
-        <SlideRoutes>
-          <Route
-            exact
-            path="/"
-            element={
+      >          
+      <Routes>
+      <Route
+          exact
+          path="/"
+          element={
+            <Suspense
+              fallback={
+                <div className="loadingdiv">
+                  <img className="loadingimg" src={Loadingimg} alt="" />
+                </div>
+              }
+            >
+              <Home />
+            </Suspense>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/about"
+          element={
+            <>
               <Suspense
                 fallback={
                   <div className="loadingdiv">
@@ -117,139 +137,167 @@ const App = () => {
               >
                 <Home />
               </Suspense>
-            }
-          ></Route>
-          <Route
-            exact
-            path="/about"
-            element={
-              <>
-                <Suspense
-                  fallback={
-                    <div className="loadingdiv">
-                      <img className="loadingimg" src={Loadingimg} alt="" />
-                    </div>
-                  }
-                >
-                  <Home />
-                </Suspense>
-              </>
-            }
-          ></Route>
-          <Route
-            exact
-            path="/contact"
-            element={
-              <Suspense
-                fallback={
-                  <div className="loadingdiv">
-                    <img className="loadingimg" src={Loadingimg} alt="" />
-                  </div>
-                }
-              >
-                <Contact />
-              </Suspense>
-            }
-          ></Route>
-          <Route
-            exact
-            path="/fpass"
-            element={
-              <>
-                <Navbar />
-                <FPassword />
-              </>
-            }
-          ></Route>
-          <Route
-            exact
-            path="/Signup"
-            element={<Signup history={useNavigate()} />}
-          ></Route>
-          <Route
-            exact
-            path="/resetpassword"
-            element={
-              <>
-                <Navbar />
-                <RPassword />
-              </>
-            }
-          ></Route>
-          <Route
-            exact
-            path="/Login"
-            element={
-              <>
-                <Navbar />
-                <Login />
-              </>
-            }
-          ></Route>
-        </SlideRoutes>
-        <Routes>
-          <Route
-            exact
-            path="/classicalmechanics"
-            element={
-              <>
-                <Navbar />
-                <ClassicalMechanics />
-              </>
-            }
-          ></Route>
-          <Route
-            exact
-            path="/thermodynamics"
-            element={
-              <>
-                <Navbar />
-                <Thermodynamics />
-              </>
-            }
-          ></Route>
-          <Route
-            exact
-            path="/physics"
-            element={
-              <>
-                <Navbar />
-                <PhysicsTopic />
-              </>
-            }
-          ></Route>
-          <Route
-            exact
-            path="/maths"
-            element={
-              <>
-                <Navbar />
-                <MathsTopic />
-              </>
-            }
-          ></Route>
-          <Route
-            exact
-            path="/algebra"
-            element={
-              <>
-                <Navbar />
-                <Algebra />
-              </>
-            }
-          ></Route>
-          <Route
-            exact
-            path="/geometry"
-            element={
-              <>
-                <Navbar />
-                <Geometry />
-              </>
-            }
-          ></Route>
+            </>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/contact"
+          element={
+            <Suspense
+              fallback={
+                <div className="loadingdiv">
+                  <img className="loadingimg" src={Loadingimg} alt="" />
+                </div>
+              }
+            >
+              <Contact />
+            </Suspense>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/fpass"
+          element={
+            <>
+              <Navbar />
+              <FPassword />
+            </>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/Signup"
+          element={<Signup history={useNavigate()} />}
+        ></Route>
+        <Route
+          exact
+          path="/resetpassword"
+          element={
+            <>
+              <Navbar />
+              <RPassword />
+            </>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/Login"
+          element={
+            <>
+              <Navbar />
+              <Login />
+            </>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/classicalmechanics"
+          element={
+            <>
+              <Navbar />
+              <ClassicalMechanics />
+            </>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/thermodynamics"
+          element={
+            <>
+              <Navbar />
+              <Thermodynamics />
+            </>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/physics"
+          element={
+            <>
+              <Navbar />
+              <PhysicsTopic />
+            </>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/maths"
+          element={
+            <>
+              <Navbar />
+              <MathsTopic />
+            </>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/algebra"
+          element={
+            <>
+              <Navbar />
+              <Algebra />
+            </>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/geometry"
+          element={
+            <>
+              <Navbar />
+              <Geometry />
+            </>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/integration"
+          element={
+            <>
+              <Navbar />
+              <Integration />
+            </>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/trigonometry"
+          element={
+            <>
+              <Navbar />
+              <Trigonometry />
+            </>
+          }
+        ></Route>
 
+        <Route
+          exact
+          path="/classicalmechanics/calc/:topic"
+          element={<CalcClassic />}
+        ></Route>
+        <Route
+          exact
+          path="/algebra/calc/:topic"
+          element={<Calpermutation />}
+        ></Route>
+        <Route
+          exact
+          path="/geometry/calc/:topic"
+          element={<CalCircle />}
+        ></Route>
+        <Route
+          exact
+          path="/algebra/calc/:topic"
+          element={<CalcComplexNumber />}
+        ></Route>
+        <Route
+          exact
+          path="/geometry/calc/:topic"
+          element={<Calstraightline />}
+        ></Route>
           <Route
+<<<<<<< HEAD
             exact
             path="/classicalmechanics/calc/:topic"
             element={<CalcClassic />}
@@ -324,184 +372,247 @@ const App = () => {
             path="/electromagnetism/calc/:topic"
             element={<CalculatorElec />}
           ></Route>
+=======
+          exact
+          path="/geometry/calc/:topic"
+          element={<CalCircle />}
+        ></Route>
+        <Route
+          exact
+          path="/thermodynamics/calc/:topic"
+          element={<CalcThermo />}
+        ></Route>
+        <Route
+          exact
+          path="/classicalmechanics/calc/gravitation/:topic"
+          element={<GravitationCalculator />}
+        ></Route>
+        <Route
+          exact
+          path="/classicalmechanics/calc/moment_of_inertia/:topic"
+          element={<MOICalculator />}
+        ></Route>
+        <Route
+          exact
+          path="/classicalmechanics/calc/shm/:topic"
+          element={<ShmCalculator />}
+        ></Route>
+        <Route
+          exact
+          path="/classicalmechanics/calc/work_power_energy/:topic"
+          element={<WPECalculator />}
+        ></Route>
+        <Route
+          exact
+          path="/classicalmechanics/calc/rotation/:topic"
+          element={<RotationCalculator />}
+        ></Route>
+        <Route
+          exact
+          path="/electromagnetism"
+          element={
+            <>
+              <Navbar />
+              <Electromagnetism />
+            </>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/electromagnetism/calc/:topic"
+          element={<CalculatorElec />}
+        ></Route>
+>>>>>>> e0f5b6b7ee6606c832c23bceb33711b88747ed31
 
-          <Route
-            exact
-            path="/electromagnetism/calc/electric_field/:topic"
-            element={<ElectricfieldCalculator />}
-          ></Route>
-          <Route
-            exact
-            path="/electromagnetism/calc/magnetic_field/:topic"
-            element={<MagneticfieldCalculator />}
-          />
-          {/* adding relativity calculator */}
+        <Route
+          exact
+          path="/electromagnetism/calc/electric_field/:topic"
+          element={<ElectricfieldCalculator />}
+        ></Route>
+        <Route
+          exact
+          path="/electromagnetism/calc/magnetic_field/:topic"
+          element={<MagneticfieldCalculator />}
+        />
+        {/* adding relativity calculator */}
 
-          <Route
-            exact
-            path="/relativity"
-            element={
-              <>
-                <Navbar />
-                <Relativity />
-              </>
-            }
-          ></Route>
-          <Route
-            exact
-            path="/relativity/calc/:topic"
-            element={<Calrelativity />}
-          />
+        <Route
+          exact
+          path="/relativity"
+          element={
+            <>
+              <Navbar />
+              <Relativity />
+            </>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/relativity/calc/:topic"
+          element={<Calrelativity />}
+        />
 
-          {/* adding atomic physics calculator */}
-          <Route
-            exact
-            path="/atomic"
-            element={
-              <>
-                <Navbar />
-                <AtomicPhysics />
-              </>
-            }
-          ></Route>
-          <Route
-            exact
-            path="/atomicphysics/calc/:topic"
-            element={<CalcAtomic />}
-          />
+        {/* adding atomic physics calculator */}
+        <Route
+          exact
+          path="/atomic"
+          element={
+            <>
+              <Navbar />
+              <AtomicPhysics />
+            </>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/atomicphysics/calc/:topic"
+          element={<CalcAtomic />}
+        />
 
-          {/* adding nuclear physics calculator */}
-          <Route
-            exact
-            path="/nuclear"
-            element={
-              <>
-                <Navbar />
-                <NuclearPhysics />
-              </>
-            }
-          ></Route>
-          <Route
-            exact
-            path="/nuclearphysics/calc/:topic"
-            element={<CalcNuclear />}
-          />
+        {/* adding nuclear physics calculator */}
+        <Route
+          exact
+          path="/nuclear"
+          element={
+            <>
+              <Navbar />
+              <NuclearPhysics />
+            </>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/nuclearphysics/calc/:topic"
+          element={<CalcNuclear />}
+        />
 
-          {/* adding photonics calculator */}
-          <Route
-            exact
-            path="/photonics"
-            element={
-              <>
-                <Navbar />
-                <Photonics />
-              </>
-            }
-          ></Route>
-          <Route
-            exact
-            path="/photonics/calc/:topic"
-            element={<CalcPhotonics />}
-          />
+        {/* adding photonics calculator */}
+        <Route
+          exact
+          path="/photonics"
+          element={
+            <>
+              <Navbar />
+              <Photonics />
+            </>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/photonics/calc/:topic"
+          element={<CalcPhotonics />}
+        />
 
-          <Route
-            exact
-            path="/quiz"
-            element={
-              <>
-                <Navbar />
-                <Quiz />
-              </>
-            }
-          ></Route>
+        <Route
+          exact
+          path="/quiz"
+          element={
+            <>
+              <Navbar />
+              <Quiz />
+            </>
+          }
+        ></Route>
 
-          <Route
-            exact
-            path="/classicalmechanics/calc/fluid_mechanics/:topic"
-            element={<FluidCalculator />}
-          ></Route>
-          <Route
-            exact
-            path="/electromagnetism"
-            element={
-              <>
-                <Navbar />
-                <Electromagnetism />
-              </>
-            }
-          ></Route>
-          <Route
-            exact
-            path="/electromagnetism/calc/:topic"
-            element={<CalculatorElec />}
-          ></Route>
+        <Route
+          exact
+          path="/classicalmechanics/calc/fluid_mechanics/:topic"
+          element={<FluidCalculator />}
+        ></Route>
+        <Route
+          exact
+          path="/electromagnetism"
+          element={
+            <>
+              <Navbar />
+              <Electromagnetism />
+            </>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/electromagnetism/calc/:topic"
+          element={<CalculatorElec />}
+        ></Route>
 
-          <Route
-            exact
-            path="/electromagnetism/calc/electric_field/:topic"
-            element={<ElectricfieldCalculator />}
-          ></Route>
-          <Route
-            exact
-            path="/electromagnetism/calc/Flux/:topic"
-            element={<FluxCalculator />}
-          />
-          <Route
-            exact
-            path="/electromagnetism/calc/electric_potential/:topic"
-            element={<ElectricpotentialCalculator />}
-          ></Route>
+        <Route
+          exact
+          path="/electromagnetism/calc/electric_field/:topic"
+          element={<ElectricfieldCalculator />}
+        ></Route>
+        <Route
+          exact
+          path="/electromagnetism/calc/Flux/:topic"
+          element={<FluxCalculator />}
+        />
+        <Route
+          exact
+          path="/electromagnetism/calc/electric_potential/:topic"
+          element={<ElectricpotentialCalculator />}
+        ></Route>
 
-          <Route
-            exact
-            path="/statistical"
-            element={
-              <>
-                <Navbar />
-                <Statistical />
-              </>
-            }
-          ></Route>
-          <Route
-            exact
-            path="/statistical/calc/:topic"
-            element={<CalculatorStatistical />}
-          ></Route>
+        <Route
+          exact
+          path="/statistical"
+          element={
+            <>
+              <Navbar />
+              <Statistical />
+            </>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/statistical/calc/:topic"
+          element={<CalculatorStatistical />}
+        ></Route>
 
-          <Route
-            exact
-            path="/questions"
-            element={
-              <>
-                <Navbar />
-                <NumMCQ />
-              </>
-            }
-          ></Route>
+        <Route
+          exact
+          path="/questions"
+          element={
+            <>
+              <Navbar />
+              <NumMCQ />
+            </>
+          }
+        ></Route>
 
-          <Route
-            exact
-            path="/questions/:type/:id"
-            element={<Singlequestion />}
-          ></Route>
-          <Route
-            exact
-            path="/MathQuestion"
-            element={
-              <>
-                <Navbar />
-                <MathMCQ />
-              </>
-            }
-          ></Route>
-          <Route
-            exact
-            path="/MathQuestion/:type/:id"
-            element={<Quest />}
-          ></Route>
+        <Route
+          exact
+          path="/questions/:type/:id"
+          element={<Singlequestion />}
+        ></Route>
+        <Route
+          exact
+          path="/MathQuestion"
+          element={
+            <>
+              <Navbar />
+              <MathMCQ />
+            </>
+          }
+        ></Route>
+        <Route
+          exact
+          path="/MathQuestion/:type/:id"
+          element={<Quest />}
+        ></Route>
+        
+        <Route
+          exact
+          path="/integration/calc/:topic"
+          element={<CalContinuity />}
+        ></Route>
 
-          {/* <Redirect to="/" /> */}
-        </Routes>
+        <Route
+          exact
+          path="/trigonometry/calc/:topic"
+          element={<CalTrigonometryFunctions />}
+        ></Route>
+
+        {/* <Redirect to="/" /> */}
+      </Routes>
       </Context.Provider>
     </React.Fragment>
   );

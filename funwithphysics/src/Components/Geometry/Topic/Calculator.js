@@ -19,23 +19,23 @@ function Calculator() {
         "Two point form: (y2 - y1)x + (x1 - x2)y - (x1 * y2) + (x2 * y1) = 0 ",
       process: [
         "To find the equation of line using the two-point formula we will be needing co-ordinates of two points.",
-        <br />],
-        example:[
-          "Find the equation of a line passing through (-2, 4) and (3, 1).",
+        <br />,
+      ],
+      example1: [
+        "Find the equation of a line passing through (-2, 4) and (3, 1).",
         <br />,
         <b>Solution: </b>,
 
         "Substituting the coordinates in the above two-point formula",
-        <br />,
+      ],
+      example2: [
         "(1-4)x + (-2-3)y - (-2*1) + (3*4) = 0",
         <br />,
         "-3x + (-5)y - (-2) + (12) = 0",
         <br />,
         <b>3x + 5y -14=0 </b>,
-        " Hence, this is the required equation of a line passing through the given points."
-
-        ]
-        
+        " Hence, this is the required equation of a line passing through the given points.",
+      ],
     },
     {
       topic: "Parabola",
@@ -56,9 +56,9 @@ function Calculator() {
         "(y-β)² = 4a(x-α) whose vertex is (α,β) and axis is parallel to the x-axis",
         <br />,
         "(x-α)² = 4a(y-β) whose vertex is (α,β) and axis is parallel to the y-axis",
-        <br />],
-        example:[
-          
+        <br />,
+      ],
+      example1: [
         "Find the equation of the parabola given the vertex(2,3) and point(-1,6).",
         <br />,
         <b>Solution: </b>,
@@ -78,7 +78,9 @@ function Calculator() {
         "where (h,k) is the vertex.",
         <br />,
         "Substituting the given vertex in the above formula. ",
-        <br />,
+        
+      ],
+      example2: [
         "y = a(x-2)²+3",
         <br />,
         "Knowing that (-1,6) lies on the parabola we can solve for 'a' by, ",
@@ -89,10 +91,8 @@ function Calculator() {
         <br />,
         "a = 1/3",
         <br />,
-        "Hence the required equation is : y = 1/3(x-2)²+3"
-
-        ]
-      
+        "Hence the required equation is : y = 1/3(x-2)²+3",
+      ],
     },
     {
       topic: "Ellipse",
@@ -111,9 +111,10 @@ function Calculator() {
       ],
       process: [
         "To find the equation of an ellipse in the standard form with center (h,k) we need two vertices and foci",
-        <br />],
-        example:[
-          "Find the equation of ellipse that has vertices (-2,-8) and (-2,2) and foci (-2,-7) and (-2,1),",
+        <br />,
+      ],
+      example1: [
+        "Find the equation of ellipse that has vertices (-2,-8) and (-2,2) and foci (-2,-7) and (-2,1),",
         <br />,
         "First we find out the center(h,k) which is halfway between the vertices,(-2,-8) and (-2,2).",
         <br />,
@@ -123,12 +124,14 @@ function Calculator() {
         <br />,
         "Next we find a².The length of major axis is 2a.We solve for 'a' by finding the distance between y-coordinates of vertices: ",
         <br />,
-        "2a = 2 - (-8)",
+        "2a = 2 - (-8)",        
         <br />,
         "a = 5 So, a² = 25",
         <br />,
-        "Now we find c². The foci are given as (h,k-c)=(-2,-7) and (h,k+c)=(-2,1).We substitute k=-3 in either of these points",
-        <br />,
+        "Now we find c². The foci are given as (h,k-c)=(-2,-7) and (h,k+c)=(-2,1).We substitute k=-3 in either of these points",        
+        
+      ],
+      example2: [
         "k+c=1",
         <br />,
         "-3+c=1",
@@ -141,33 +144,37 @@ function Calculator() {
         <br />,
         "Finally after substituting all the values we found into the standard form we get:",
         <br />,
-        "(x+2)²/9 + (y+3)²/25 = 1"
-
-        ]
-        
-       
+        "(x+2)²/9 + (y+3)²/25 = 1",
+      ],
     },
-
     {
       topic: "Circle",
       details: `A circle is a closed curve in which the set of all the points in the plane are equidistant from a given point known as the “center” of a circle. Radius is the distance from the centre of the circle to the outer line while Diameter is the line that divides the circle into two equal parts and the relation between diameter and radius is, diameter is equal to twice of the radius (D = 2r). A circle is also a special kind of ellipse in which the the two foci are coincident and eccentricity is zero. e = 0`,
-      formula:
-        "The Equation of Circle : (x-h)² + (y-k)² = r²",
+      formula: "The Equation of Circle : (x-h)² + (y-k)² = r²",
       process: [
         "To find the standard equation of a circle, we will be needing the coordinates of the center of the circle (h,k) and its radius (r).",
+<<<<<<< HEAD
       ],
         example:[
+=======
+        <br />,
+      ],
+      example1: [
+>>>>>>> e0f5b6b7ee6606c832c23bceb33711b88747ed31
         <b>E.g. </b>,
         "Find the equation of a circle if point (1,2) is the center of the circle and it’s radius is equal to 4 cm.",
         <br />,
         <b>Solution: </b>,
         <br />,
         "(x-1)²+(y-2)² = 4²",
-        <br />,
+        
+      ],      
+      example2: [
         "(x²−2x+1)+(y²−4y+4) =16",
         <br />,
         <b>x²+y²−2x−4y-11 = 0 </b>,
         <br />,
+<<<<<<< HEAD
         "Hence, this is the required standard equation of the given circle."
         ]
       
@@ -219,12 +226,17 @@ function Calculator() {
 
         ]
     }
+=======
+        "Hence, this is the required standard equation of the given circle.",
+      ],
+    },
+>>>>>>> e0f5b6b7ee6606c832c23bceb33711b88747ed31
   ];
 
   const page = Topics.filter((data) => data.topic === topic);
   const details = page[0];
 
-  //Mass Energy Relation calculator
+  //Straight line
   const StraightLine = () => {
     const [x1, setX1] = useState("");
     const [x2, setX2] = useState(null);
@@ -743,6 +755,7 @@ function Calculator() {
     );
   };
 
+  //Ellipse
   const Ellipse = () => {
     const [v1, setV1] = useState(null);
     const [v2, setV2] = useState(null);
@@ -1089,7 +1102,8 @@ function Calculator() {
       </>
     );
   };
-//Circle
+
+  //Circle
   const Circle = () => {
     const [h1, setH1] = useState("");
     const [k1, setK1] = useState(null);
@@ -1102,9 +1116,9 @@ function Calculator() {
 
       setResult(null);
     };
-    
+
     const calcCircle = () => {
-      const sq=r1*r1;
+      const sq = r1 * r1;
       let equation = `(x-${h1})² + (y-${k1})² = ${sq}`;
       setResult(equation);
     };
@@ -1118,19 +1132,17 @@ function Calculator() {
               <br />
             </Form.Text>
           </Form.Group>
-  
+
           <Form.Group className="mb-4" controlId="text">
             <div className="straight_calc">
               <form name="first">
-              <p>
+                <p>
                   <strong>Center: </strong>(h,k) &nbsp; <strong>Radius:</strong>
                   &nbsp; r
                 </p>
                 <div className="group">
                   <div className="coordinate">
-                    <label>
-                      h
-                    </label>
+                    <label>h</label>
                     <input
                       name="h1"
                       type="text"
@@ -1139,11 +1151,9 @@ function Calculator() {
                       value={h1}
                     />
                   </div>
-  
+
                   <div className="coordinate">
-                    <label>
-                        k
-                    </label>
+                    <label>k</label>
                     <input
                       name="k1"
                       type="text"
@@ -1153,12 +1163,10 @@ function Calculator() {
                     />
                   </div>
                 </div>
-  
+
                 <div className="group clearfix">
                   <div className="coordinate">
-                    <label>
-                      r
-                    </label>
+                    <label>r</label>
                     <input
                       name="r1"
                       className="easynumeric"
@@ -1170,13 +1178,14 @@ function Calculator() {
               </form>
             </div>
           </Form.Group>
-  
+
           <Form.Group className="mb-4">
-          <Form.Label>
-                <b>
-                  Standard Form: (x - h)<sup>2</sup> + (y - k)<sup>2</sup>= r<sup>2</sup>
-                </b>
-          </Form.Label>
+            <Form.Label>
+              <b>
+                Standard Form: (x - h)<sup>2</sup> + (y - k)<sup>2</sup>= r
+                <sup>2</sup>
+              </b>
+            </Form.Label>
             <Form.Control
               readOnly
               type="number"
@@ -1201,7 +1210,7 @@ function Calculator() {
                   <h3>Circles </h3>
                 </tr>
               </section>
-  
+
               <tr>
                 <th className="row-1 row-ID  "> Circles</th>
                 <th className="row-2 row-name ">Equation</th>
@@ -1211,28 +1220,33 @@ function Calculator() {
               <tr>
                 <td>Standard Equation of a Circle</td>
                 <td>
-                  <b>(x - h)<sup>2</sup> + (y - k)<sup>2</sup> = r<sup>2</sup></b>
+                  <b>
+                    (x - h)<sup>2</sup> + (y - k)<sup>2</sup> = r<sup>2</sup>
+                  </b>
                 </td>
               </tr>
               <tr>
                 <td>General form</td>
                 <td>
-                  <b>x<sup>2</sup> + y<sup>2</sup> + 2hx + 2ky + C = 0</b>
+                  <b>
+                    x<sup>2</sup> + y<sup>2</sup> + 2hx + 2ky + C = 0
+                  </b>
                 </td>
               </tr>
               <tr>
                 <td>Parametric Equation</td>
                 <td>
-                  <b>x<sup>2</sup> + y<sup>2</sup> + 2hx + 2ky + C = 0</b> <p>where, (x = -h + rcosθ, y = -k + rsinθ)</p>
+                  <b>
+                    x<sup>2</sup> + y<sup>2</sup> + 2hx + 2ky + C = 0
+                  </b>{" "}
+                  <p>where, (x = -h + rcosθ, y = -k + rsinθ)</p>
                 </td>
               </tr>
               <tr>
                 <td>Polar Equation</td>
                 <td>
                   <b>r = p</b>
-                  <p>
-                    where, p is the radius of the circle
-                  </p>
+                  <p>where, p is the radius of the circle</p>
                 </td>
                 </tr>
                 <tr>
@@ -1277,18 +1291,26 @@ function Calculator() {
                   <strong>Equation</strong>
                 </th>
                 <th>
-                  <strong>(x - h)<sup>2</sup> + (y - k)<sup>2</sup> = r<sup>2</sup></strong>
+                  <strong>
+                    (x - h)<sup>2</sup> + (y - k)<sup>2</sup> = r<sup>2</sup>
+                  </strong>
                 </th>
               </tr>
             </thead>
             <tbody>
-            <tr>
+              <tr>
                 <td>Diameter of Circle</td>
-                <td><b>2r</b></td>
+                <td>
+                  <b>2r</b>
+                </td>
               </tr>
               <tr>
                 <td>Area of Circle</td>
-                <td><b>&pi;r<sup>2</sup></b></td>
+                <td>
+                  <b>
+                    &pi;r<sup>2</sup>
+                  </b>
+                </td>
               </tr>
               <tr>
                 <td>Circumference of Circle</td>
@@ -1302,6 +1324,7 @@ function Calculator() {
       </>
     );
   };
+<<<<<<< HEAD
 //Hyperbola
 const Hyperbola = () => {
   const [v11, setV11] = useState(null);
@@ -1650,6 +1673,9 @@ const Hyperbola = () => {
     </>
   );
 }
+=======
+
+>>>>>>> e0f5b6b7ee6606c832c23bceb33711b88747ed31
   //adding the calculators togather
   function calC(key) {
     let currentCall;
@@ -1666,9 +1692,13 @@ const Hyperbola = () => {
       case "Circle":
         currentCall = Circle();
         break;
+<<<<<<< HEAD
       case "Hyperbola":
         currentCall = Hyperbola();
         break;
+=======
+
+>>>>>>> e0f5b6b7ee6606c832c23bceb33711b88747ed31
       default:
         break;
     }
@@ -1702,8 +1732,16 @@ const Hyperbola = () => {
           <p>{details.process}</p>
         </div>
         <div className="Calculator__example">
-          <h3>Example</h3>
-          <p>{details.example}</p>
+          <h3>Example</h3>          
+          <div className="row">
+            <div className="col-sm-6 col-lg-6 ">
+              <p>{details.example1}</p>
+            </div>
+
+            <div className="col-sm-6 col-lg-6 ">
+              <p>{details.example2}</p>
+            </div>
+          </div>
         </div>
         <div className="Calculator__calc">
           <h3>{details.topic} Calculator</h3>

@@ -25,6 +25,7 @@
     column-gap: 2em;
     row-gap: 2em;
     transition: "opacity 350ms ease";
+    margin-bottom: 200px;
   }
   
   .mech__header {
@@ -87,5 +88,6 @@
   }
   
   .btn {
-    border: 1px solid ;
+    border: 1px solid;
   }
+  
