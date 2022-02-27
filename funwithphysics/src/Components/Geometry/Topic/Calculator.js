@@ -78,7 +78,6 @@ function Calculator() {
         "where (h,k) is the vertex.",
         <br />,
         "Substituting the given vertex in the above formula. ",
-        
       ],
       example2: [
         "y = a(x-2)²+3",
@@ -124,12 +123,11 @@ function Calculator() {
         <br />,
         "Next we find a².The length of major axis is 2a.We solve for 'a' by finding the distance between y-coordinates of vertices: ",
         <br />,
-        "2a = 2 - (-8)",        
+        "2a = 2 - (-8)",
         <br />,
         "a = 5 So, a² = 25",
         <br />,
-        "Now we find c². The foci are given as (h,k-c)=(-2,-7) and (h,k+c)=(-2,1).We substitute k=-3 in either of these points",        
-        
+        "Now we find c². The foci are given as (h,k-c)=(-2,-7) and (h,k+c)=(-2,1).We substitute k=-3 in either of these points",
       ],
       example2: [
         "k+c=1",
@@ -161,8 +159,7 @@ function Calculator() {
         <b>Solution: </b>,
         <br />,
         "(x-1)²+(y-2)² = 4²",
-        
-      ],      
+      ],
       example2: [
         "(x²−2x+1)+(y²−4y+4) =16",
         <br />,
@@ -189,9 +186,16 @@ function Calculator() {
       ],
       process: [
         "To find the equation of a hyperbola in the standard form with center (h,k) we need two vertices and foci.",
+<<<<<<< HEAD
         <br />],
         example1:[
           "Find the standard form equation of the hyperbola that has vertices at (0,−2) and (6,−2) and foci at (−2,−2) and (8,−2)?",
+=======
+        <br />,
+      ],
+      example1: [
+        "Find the standard form equation of the hyperbola that has vertices at (0,−2) and (6,−2) and foci at (−2,−2) and (8,−2)?",
+>>>>>>> 534bc3c5fff27d0568fe7a861144af34a4ea5225
         <br />,
         "The y-coordinates of the vertices and foci are the same, so the transverse axis is parallel to the x-axis. Thus, the equation of the hyperbola will have the form",
         <br />,
@@ -201,9 +205,15 @@ function Calculator() {
         <br />,
         "Next, we find a². The length of the transverse axis, 2a, is bounded by the vertices. So, we can find a² by finding the distance between the x-coordinates of the vertices.",
         <br />,
+<<<<<<< HEAD
         "2a = |0-6| => 2a = 6 => a = 3 => a² = 9"
         ],
         example2:[
+=======
+        "2a = |0-6| => 2a = 6 => a = 3 => a² = 9",
+      ],
+      example2: [
+>>>>>>> 534bc3c5fff27d0568fe7a861144af34a4ea5225
         "Now we need to find c². The coordinates of the foci are (h±c,k). So, (h-c,k) = (-2,-2) and (h+c,k) = (8,-2)",
         <br />,
         "We can use the x-coordinate from either of these points to solve for c. Using the point (8,−2), and substituting h=3,",
@@ -216,9 +226,15 @@ function Calculator() {
         <br />,
         "Finally, after substituting the values, the standard equation is :",
         <br />,
+<<<<<<< HEAD
         <strong>(x-3)²/9 - (y+2)²/16 = 1</strong>
         ]
     }
+=======
+        <strong>(x-3)²/9 - (y+2)²/16 = 1</strong>,
+      ],
+    },
+>>>>>>> 534bc3c5fff27d0568fe7a861144af34a4ea5225
   ];
 
   const page = Topics.filter((data) => data.topic === topic);
@@ -769,8 +785,13 @@ function Calculator() {
     const calcEllipse = () => {
       // Converting the values into integers.
       let V1, V2, V3, V4, C1, C2, C4;
+<<<<<<< HEAD
       [V1, V2, V3, V4, C1, C2, C4] = [v1, v2, v3, v4, c1, c2, c3, c4].map((varr) =>
         parseInt(varr)
+=======
+      [V1, V2, V3, V4, C1, C2, C4] = [v1, v2, v3, v4, c1, c2, c3, c4].map(
+        (varr) => parseInt(varr)
+>>>>>>> 534bc3c5fff27d0568fe7a861144af34a4ea5225
       );
       let major_xaxis = false;
       const [h, k] = [(V1 + V3) / 2, (V2 + V4) / 2];
@@ -1236,6 +1257,7 @@ function Calculator() {
                   <b>r = p</b>
                   <p>where, p is the radius of the circle</p>
                 </td>
+<<<<<<< HEAD
                 </tr>
                 <tr>
                 <td>Tangent to the equation x<sup>2</sup>+ y<sup>2</sup>=a<sup>2</sup> at (x<sub>1</sub>, y<sub>1</sub>)</td>
@@ -1261,6 +1283,50 @@ function Calculator() {
                   <strong>y = mx ± a √[1+ m2]</strong>
                 </td>
                 </tr>
+=======
+              </tr>
+              <tr>
+                <td>
+                  Tangent to the equation x<sup>2</sup>+ y<sup>2</sup>=a
+                  <sup>2</sup> at (x<sub>1</sub>, y<sub>1</sub>)
+                </td>
+                <td>
+                  <strong>
+                    xx<sub>1</sub>+yy<sub>1</sub> = a<sup>2</sup>
+                  </strong>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Tangent to the equation x<sup>2</sup> + y<sup>2</sup> + 2gx +
+                  2fy + c = 0 at (x<sub>1</sub>, y<sub>1</sub>)
+                </td>
+                <td>
+                  <strong>
+                    xx<sub>1</sub> + yy<sub>1</sub> + g(x+x<sub>1</sub>) + f(y+y
+                    <sub>1</sub>) + c = 0
+                  </strong>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Tangent to the equation x<sup>2</sup>+ y<sup>2</sup>=a
+                  <sup>2</sup> at (acosθ , asinθ)
+                </td>
+                <td>
+                  <strong>xcosθ + ysinθ = a</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Tangent to the equation x<sup>2</sup>+ y<sup>2</sup>=a
+                  <sup>2</sup> for a line y = mx +c
+                </td>
+                <td>
+                  <strong>y = mx ± a √[1+ m2]</strong>
+                </td>
+              </tr>
+>>>>>>> 534bc3c5fff27d0568fe7a861144af34a4ea5225
             </tbody>
           </table>
         </div>
@@ -1312,6 +1378,7 @@ function Calculator() {
       </>
     );
   };
+<<<<<<< HEAD
 //Hyperbola
 const Hyperbola = () => {
   const [v11, setV11] = useState(null);
@@ -1332,6 +1399,374 @@ const Hyperbola = () => {
     setC21("");
     setC31("");
     setC41("");
+=======
+  //Hyperbola
+  const Hyperbola = () => {
+    const [v11, setV11] = useState(null);
+    const [v21, setV21] = useState(null);
+    const [v31, setV31] = useState(null);
+    const [v41, setV41] = useState(null);
+    const [c11, setC11] = useState(null);
+    const [c21, setC21] = useState(null);
+    const [c31, setC31] = useState(null);
+    const [c41, setC41] = useState(null);
+    const [result, setResult] = useState(null);
+    const reset = () => {
+      setV11("");
+      setV21("");
+      setV31("");
+      setV41("");
+      setC11("");
+      setC21("");
+      setC31("");
+      setC41("");
+
+      setResult(null);
+    };
+    const calcHyperbola = () => {
+      // Converting the values into integers.
+      let V11, V21, V31, V41, C11, C21, C31, C41;
+      [V11, V21, V31, V41, C11, C21, C31, C41] = [
+        v11,
+        v21,
+        v31,
+        v41,
+        c11,
+        c21,
+        c31,
+        c41,
+      ].map((varr) => parseInt(varr));
+      let major_xaxis = false;
+      const [h, k] = [(V11 + V31) / 2, (V21 + V41) / 2];
+      if (V21 === 0 && V41 === 0 && C21 === 0 && C41 === 0) {
+        major_xaxis = true;
+      }
+      const a = major_xaxis ? Math.abs(V11) : (V11 - V31) / 2;
+      const c = major_xaxis ? Math.abs(C11) : C31 - h;
+      const [aSquare, cSquare] = [a * a, c * c];
+      const bSquare = cSquare - aSquare;
+      let equation = [
+        `(x${h >= 0 ? "-" : "+"}${h < 0 ? -h : h})²/${aSquare} - (y${
+          k >= 0 ? "-" : "+"
+        }${k < 0 ? -k : k})²/${bSquare} = 1`,
+        `(y${k >= 0 ? "-" : "+"}${k < 0 ? -k : k})²/${aSquare} - (x${
+          h >= 0 ? "-" : "+"
+        }${h < 0 ? -h : h})²/${bSquare} = 1`,
+      ];
+      setResult(equation);
+    };
+    return (
+      <>
+        <Form>
+          <Form.Group className="mb-4" controlId="text">
+            <Form.Text className="text">
+              <strong> To find the equation of Hyperbola</strong>
+              <br />
+            </Form.Text>
+          </Form.Group>
+
+          <Form.Group className="mb-4" controlId="text">
+            <div className="straight_calc">
+              <form name="first">
+                <p>
+                  <strong>Vertices: </strong>v1,v2,v3,v4 &nbsp;{" "}
+                  <strong>Foci:</strong>c1,c2,c3,c4
+                </p>
+                <div className="group">
+                  <div className="coordinate mb-2">
+                    <label>
+                      v<sub>1</sub>
+                    </label>
+                    <input
+                      name="x1"
+                      type="text"
+                      className="easynumeric"
+                      onChange={(e) => setV11(e.target.value)}
+                      value={v11}
+                    />
+                  </div>
+
+                  <div className="coordinate mb-2">
+                    <label>
+                      v<sub>2</sub>
+                    </label>
+                    <input
+                      name="x2"
+                      type="text"
+                      className="easynumeric"
+                      onChange={(e) => setV21(e.target.value)}
+                      value={v21}
+                    />
+                  </div>
+                </div>
+
+                <div className="group clearfix">
+                  <div className="coordinate mb-2">
+                    <label>
+                      v<sub>3</sub>
+                    </label>
+                    <input
+                      name="y1"
+                      type="text"
+                      className="easynumeric"
+                      value={v31}
+                      onChange={(e) => setV31(e.target.value)}
+                    />
+                  </div>
+
+                  <div className="coordinate mb-2">
+                    <label>
+                      v<sub>4</sub>
+                    </label>
+                    <input
+                      name="y2"
+                      type="text"
+                      className="easynumeric"
+                      value={v41}
+                      onChange={(e) => setV41(e.target.value)}
+                    />
+                  </div>
+                </div>
+
+                <div className="group">
+                  <div className="coordinate mb-2">
+                    <label>
+                      c<sub>1</sub>
+                    </label>
+                    <input
+                      name="x1"
+                      type="text"
+                      className="easynumeric"
+                      onChange={(e) => setC11(e.target.value)}
+                      value={c11}
+                    />
+                  </div>
+
+                  <div className="coordinate mb-2">
+                    <label>
+                      c<sub>2</sub>
+                    </label>
+                    <input
+                      name="x2"
+                      type="text"
+                      className="easynumeric"
+                      onChange={(e) => setC21(e.target.value)}
+                      value={c21}
+                    />
+                  </div>
+                </div>
+
+                <div className="group clearfix">
+                  <div className="coordinate">
+                    <label>
+                      c<sub>3</sub>
+                    </label>
+                    <input
+                      name="y1"
+                      type="text"
+                      className="easynumeric"
+                      value={c31}
+                      onChange={(e) => setC31(e.target.value)}
+                    />
+                  </div>
+
+                  <div className="coordinate">
+                    <label>
+                      c<sub>4</sub>
+                    </label>
+                    <input
+                      name="y2"
+                      type="text"
+                      className="easynumeric"
+                      value={c41}
+                      onChange={(e) => setC41(e.target.value)}
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+          </Form.Group>
+
+          <div className="input-group mb-4">
+            <Form.Group className="mr-3" id="r1">
+              <Form.Label>
+                <b>Standard Form1 [(x-h)²/a² - (y-k)²/b² = 1] :</b>
+              </Form.Label>
+              <Form.Control
+                readOnly
+                type="number"
+                placeholder={result === null ? "Result1" : result[0] + " "}
+              ></Form.Control>
+            </Form.Group>
+            <Form.Group className="mb-4">
+              <Form.Label>
+                <b>Standard Form2 [(y-k)²/a² - (x-h)²/b² = 1] :</b>
+              </Form.Label>
+              <Form.Control
+                readOnly
+                type="number"
+                placeholder={result === null ? "Result2" : result[1] + " "}
+              ></Form.Control>
+            </Form.Group>
+          </div>
+        </Form>
+        <div className="button-custom-grp mb-5">
+          <Button variant="primary" onClick={calcHyperbola}>
+            Calculate
+          </Button>
+          &nbsp;&nbsp;&nbsp;
+          <Button variant="dark" onClick={() => reset()} type="reset">
+            Reset
+          </Button>
+        </div>
+        <div className="formula-table mb-4">
+          <table className="formulae">
+            <thead>
+              <section className="m-2">
+                <tr>
+                  <h3> Hyperbola </h3>
+                </tr>
+              </section>
+
+              <tr>
+                <th>
+                  <strong>Equation</strong>
+                </th>
+                <th>
+                  <strong>x²/a² - y²/b² = 1</strong>
+                  <span> (Hyperbola)</span>
+                </th>
+                <th>
+                  <strong>-x²/a² + y²/b² = 1</strong>
+                  <span> (Conjugate Hyperbola)</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Equation of Transverse axis</td>
+                <td>y = 0</td>
+                <td>x = 0</td>
+              </tr>
+              <tr>
+                <td>Length of Transverse axis</td>
+                <td>2a</td>
+                <td>2b</td>
+              </tr>
+              <tr>
+                <td>Equation of Conjugate axis</td>
+                <td>x = 0</td>
+                <td>y = 0</td>
+              </tr>
+              <tr>
+                <td>Length of Conjugate axis</td>
+                <td>2b</td>
+                <td>2a</td>
+              </tr>
+              <tr>
+                <td>Vertices</td>
+                <td>(&#177;a,0)</td>
+                <td>(0,&#177;b)</td>
+              </tr>
+              <tr>
+                <td>Foci</td>
+                <td>(&#177;ae,0)</td>
+                <td>(0,&#177;be)</td>
+              </tr>
+              <tr>
+                <td>Directrix</td>
+                <td>x = &#177;(a/e)</td>
+                <td>y = &#177;(b/e)</td>
+              </tr>
+              <tr>
+                <td>Eccentricity</td>
+                <td>
+                  e = &#8730;(a<sup>2</sup>+b<sup>2</sup>)/a<sup>2</sup>
+                </td>
+                <td>
+                  e = &#8730;(b<sup>2</sup>+a<sup>2</sup>)/b<sup>2</sup>
+                </td>
+              </tr>
+              <tr>
+                <td>Length of Latus-rectum</td>
+                <td>
+                  2b<sup>2</sup>/a
+                </td>
+                <td>
+                  2a<sup>2</sup>/b
+                </td>
+              </tr>
+              <tr>
+                <td>Centre</td>
+                <td>(0,0)</td>
+                <td>(0,0)</td>
+              </tr>
+              <tr>
+                <td>Focal distances of any point(x,y)</td>
+                <td>ex &#177; a</td>
+                <td>ey &#177; b</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className="formula-table">
+          <table className="formulae">
+            <thead>
+              <section className="m-2">
+                {" "}
+                <tr>
+                  <h3>Formulas of Hyperbola</h3>
+                </tr>
+              </section>
+
+              <tr>
+                <th>
+                  <strong>Equation</strong>
+                </th>
+                <th>
+                  <strong>x²/a² - y²/b² = 1</strong>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Equation of Rectangular Hyperbola</td>
+                <td>ax² + 2hxy + by² + 2gx + 2fy + 2c = 0</td>
+              </tr>
+              <tr>
+                <td>
+                  Equation of Tangent at t<sub>1</sub>
+                </td>
+                <td>
+                  x + yt<sub>1</sub>
+                  <sup>2</sup> - 2ct<sub>1</sub> = 0
+                </td>
+              </tr>
+              <tr>
+                <td>Equation of Director Circle</td>
+                <td>
+                  x<sup>2</sup> + y<sup>2</sup> = a<sup>2</sup> - b<sup>2</sup>
+                </td>
+              </tr>
+              <tr>
+                <td>Equation of Tangent at any point</td>
+                <td>
+                  xx<sub>1</sub>/a² - yy<sub>1</sub>/b² = 1
+                </td>
+              </tr>
+              <tr>
+                <td>Equation of Normal at any point</td>
+                <td>
+                  (a²x)/x<sub>1</sub> + (b²y)/y<sub>1</sub> = a² + b²
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </>
+    );
+  };
+>>>>>>> 534bc3c5fff27d0568fe7a861144af34a4ea5225
 
     setResult(null);
   };
@@ -1712,7 +2147,7 @@ const Hyperbola = () => {
           <p>{details.process}</p>
         </div>
         <div className="Calculator__example">
-          <h3>Example</h3>          
+          <h3>Example</h3>
           <div className="row">
             <div className="col-sm-6 col-lg-6 ">
               <p>{details.example1}</p>

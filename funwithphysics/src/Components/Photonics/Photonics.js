@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Card } from "react-bootstrap";
 import '../PysicsStyles/physicsmenustyle.css'
 import { Link } from "react-router-dom";
@@ -6,6 +6,12 @@ import { Helmet } from "react-helmet";
 import Footer from "../Footer/Footer";
 
 export default function Photonics() {
+  useEffect(() => {
+    
+    window.scrollTo(0, 0);
+   
+ 
+}, []);
   // topics_data
   const Topics = [
     {
@@ -14,7 +20,6 @@ export default function Photonics() {
       siunit: "degree",
       process: `"θ = tan⁻¹(n₂/n₁)" This equation is known as Brewster's law, where 'θ' is a brewster's angle, 'n₁' is the refractive index of the first media through which light propagates (the "incidental medium"), and 'n₂' is the index of the other medium, and we can simply get the angle by plugging these numbers into the equation.`,
       details: `The reflected light will be linearly polarised if light strikes an interface at a 90ᴼ angle between the reflected and refracted rays. The polarisation direction (the direction in which the electric field vectors point) is parallel to the interface plane.
-
                The Brewster angle, θ., is a unique incidence angle that results in a 90ᴼ angle between the reflected and refracted rays. A quick calculation reveals that tan(θ) = n₂/n₁.`,
       dimension: "M⁰ L⁰ T⁰ ",
     },
@@ -57,6 +62,15 @@ export default function Photonics() {
       process: `In order to find the power of lens we need to know the focal lenght of the lens(f)`,
       details: `The power of a lens is defined as its ability to converge or diverge the beam of light that falls on it.`,
       dimension: "L¹",
+    },
+    {
+      topic: "Refractive Index",
+      formula: "μ = sin(i) / sin(r), where i is the Angle of Incidence and r is the Angle of Refraction",
+      siunit: "No unit",
+      process: `In order to find the Refractive-Index of a medium relative to vacuum, we must know the angle of Incidence(i) and the angle of Refraction(r).Using these values in Snell's Law,we can easily find the Refractive Index of the medium.`,
+      details: `The Refractive-Index of a medium relative to vacuum, can be defined as the ratio of the speed of light in vacuum to the speed of light in the medium.Using Snell's Law of Refraction,it can be closely approximated to be equal to
+      the ratio of sine of angle of Incidence to the sine of angle of Refraction.Snell's Law describes how light bends when traveling from one medium to the next.`,
+      dimension: "NA ",
     },
   ];
 

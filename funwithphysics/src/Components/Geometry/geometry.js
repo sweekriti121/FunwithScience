@@ -36,7 +36,11 @@ export default function Algebra() {
       details: "",
       formula: "",
       process: "",
+<<<<<<< HEAD
     }
+=======
+    },
+>>>>>>> 534bc3c5fff27d0568fe7a861144af34a4ea5225
   ];
 
   return (

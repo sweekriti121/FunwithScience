@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import blackboardSvg from "../../Images/blackboard-svg.svg";
 // eslint-disable-next-line
-import computerSvg from "../../Images/computer-svg.svg";
-import addCircleSvg from "../../Images/add-circle.svg";	
-import explorerBtn from "../../Images/explorer.png";
 import { Link } from "react-router-dom";
 import "./styles.css";
 
@@ -67,7 +64,7 @@ export function LearnMore() {
               <div className="dropdown-content">
                 <Link to="/maths">Calculator</Link>
                 <Link to="/MathQuestion">Questions</Link>
-                <Link to="/quiz">Quiz</Link>
+                <Link to="/mathsquiz">Quiz</Link>
               </div>
             </div>
           </li>
@@ -85,7 +82,7 @@ export function LearnMore() {
               <div className="dropdown-content">
                 <Link to="/physics">Calculator</Link>
                 <Link to="/questions">Questions</Link>
-                <Link to="/quiz">Quiz</Link>
+                <Link to="/physicsquiz">Quiz</Link>
               </div>
             </div>
           </li>

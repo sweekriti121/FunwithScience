@@ -11,7 +11,7 @@ import { useParams } from "react-router-dom";
 // import Modal from "react-bootstrap/Modal";
 
 function Calculator() {
-  let {topic} = useParams();
+  let { topic } = useParams();
   // topics_data
   const Topics = [
     {
@@ -20,7 +20,6 @@ function Calculator() {
       siunit: "degree",
       process: `"θ = tan⁻¹(n₂/n₁)" This equation is known as Brewster's law, where 'θ' is a brewster's angle, 'n₁' is the refractive index of the first media through which light propagates (the "incidental medium"), and 'n₂' is the index of the other medium, and we can simply get the angle by plugging these numbers into the equation.`,
       details: `The reflected light will be linearly polarised if light strikes an interface at a 90ᴼ angle between the reflected and refracted rays. The polarisation direction (the direction in which the electric field vectors point) is parallel to the interface plane.
-
                The Brewster angle, θ., is a unique incidence angle that results in a 90ᴼ angle between the reflected and refracted rays. A quick calculation reveals that tan(θ) = n₂/n₁.`,
       dimension: "M⁰ L⁰ T⁰ ",
     },
@@ -64,10 +63,238 @@ function Calculator() {
       details: `The power of a lens is defined as its ability to converge or diverge the beam of light that falls on it.`,
       dimension: "L¹",
     },
+    {
+      topic: "Refractive Index",
+      formula: "μ = sin(i) / sin(r), where i is the Angle of Incidence and r is the Angle of Refraction",
+      siunit: "No unit",
+      process: `In order to find the Refractive-Index of a medium relative to vacuum, we must know the angle of Incidence(i) and the angle of Refraction(r).Using these values in Snell's Law,we can easily find the Refractive Index of the medium.`,
+      details: `The Refractive-Index of a medium relative to vacuum, can be defined as the ratio of the speed of light in vacuum to the speed of light in the medium.Using Snell's Law of Refraction,it can be closely approximated to be equal to
+      the ratio of sine of angle of Incidence to the sine of angle of Refraction.Snell's Law describes how light bends when traveling from one medium to the next.`,
+      dimension: "NA ",
+    },
   ];
 
   const page = Topics.filter((data) => data.topic === topic);
   const details = page[0];
+
+
+
+
+  //Refractive index calculator
+  const RefractiveIndex = () => {
+    const [i, setI] = useState(null);
+    const [n, setN] = useState(null);
+    const [result, setResult] = useState(null);
+    const [i1, setI1] = useState(null);
+    const [r1, setR1] = useState(null);
+    const [result2, setResult2] = useState(null);
+    const [choice, setChoice] = useState("Refractive-Index");
+    const [showSolution1, setShowSolution1] = useState(false);
+    const [showSolution2, setShowSolution2] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+
+    const givenValues1 = {
+      i: i1,
+      r: r1,
+    };
+
+    const insertValues1 = `sin(${i1}) / sin(${r1})`;
+
+    const givenValues2 = {
+      i: i,
+      refractiveIndex: n,
+    };
+
+    const insertValues2 = `${n} / sin(${i})`;
+
+    function reset() {
+      setResult(null);
+      setI(null);
+      setN(null);
+      setResult2(null);
+      setI1(null);
+      setR1(null);
+      setShowSolution1(false);
+      setShowSolution2(false);
+    }
+    const handleChange=(e)=>{
+      setChoice(e.target.value);
+      reset(); 
+    }
+    const calcResult = () => {
+      if(i !== null && n !== null){
+        if (i > 90 || n < 1 || i < 0)
+          alert("Please Enter valid values for Refractive Index and Angle of Incidence");
+        else {
+          var refraction_angle = Math.asin(Math.sin(i * 0.01745329) / n);
+          setShowSolution1(true);
+          setResult(57.29578 * refraction_angle);
+        }
+      }
+      else{
+        setShowModal(true);
+      }      
+    }
+    const calcResult2 = () => {
+      if(i1 !== null && r1 !== null){
+        if (i1 > 90 || r1 > 90 || i1 < 0 || r1 < 0)
+          alert("Please Enter valid values for Angle of Refraction and Angle of Incidence");
+        else{        
+          setShowSolution2(true);
+          setResult2(Math.sin(0.01745329 * i1) / Math.sin(0.01745329 * r1));
+        }
+      }      
+      else{
+        setShowModal(true);
+      } 
+    }
+    return (
+      <>
+      <Modal show={showModal} class="modal-dialog modal-dialog-centered">
+          <Modal.Header>
+            Please Enter all values to get Proper answer
+          </Modal.Header>
+          <Modal.Footer>
+            <Button
+              onClick={() => setShowModal(false)}
+              class="btn btn-primary btn-sm"
+            >
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+         <Form.Group className="mb-4" controlId="choice">
+            <Form.Label>Select the type of calculation</Form.Label>
+            <Form.Control
+              as="select"
+              className="select-custom-res"
+              onChange={(e) => handleChange(e)}
+            >
+              <option value="Refractive-Index">Refractive Index</option>
+              <option value="Refractive-Angle">Angle Of Refraction</option>
+            </Form.Control>
+          </Form.Group>
+        {choice === "Refractive-Angle" &&
+          <>
+            <Form>
+              <Form.Group className="mb-4">
+                <Form.Label>Angle Of Incidence</Form.Label>
+                <Form.Control
+                  type="number"
+                  placeholder="Enter the Angle of Incidence in degrees"
+                  onChange={(e) => setI(Number(e.target.value))}
+                  value={i === null ? "" : i}
+                />
+              </Form.Group>
+              <Form.Group className="mb-4">
+                <Form.Label>Refractive Index</Form.Label>
+                <Form.Control
+                  type="number"
+                  placeholder="Enter the value of n"
+                  onChange={(e) => setN(e.target.value)}
+                  value={n === null ? "" : n}
+                />
+              </Form.Group>              
+              
+              {showSolution1 ? (
+                <Form.Group className="mb-3" controlId="acceleration">
+                  <Solution
+                    givenValues={givenValues2}
+                    formula="μ / sin(i)"
+                    toFind="Angle of Refraction sin(r)"
+                    insertValues={insertValues2}
+                    result={result}
+                    // constants={constants}
+                  />
+                </Form.Group>
+              ) : null}
+
+              <Form.Group className="mb-4">
+                <Form.Label>Angle of Refraction</Form.Label>
+                <Form.Control
+                  readOnly
+                  type="number"
+                  placeholder={result === null ? "Result" : result}
+                />
+              </Form.Group>
+            </Form>
+            <div className="button-custom-grp">
+              <Button variant="primary" onClick={calcResult}>
+                Calculate
+              </Button>
+
+              <Button variant="dark" onClick={() => reset()} type="reset">
+                Reset
+              </Button>
+            </div>
+          </>
+        }
+        {choice === "Refractive-Index" &&
+          <>
+            <Form>
+              <Form.Group className="mb-4">
+                <Form.Label>Angle Of Incidence</Form.Label>
+                <Form.Control
+                  type="number"
+                  placeholder="Enter the Angle of Incidence in degrees"
+                  onChange={(e) => setI1(Number(e.target.value))}
+                  value={i1 === null ? "" : i1}
+                />
+              </Form.Group>
+              <Form.Group className="mb-4">
+                <Form.Label>Angle Of Refraction</Form.Label>
+                <Form.Control
+                  type="number"
+                  placeholder="Enter the Angle of Refraction in degrees"
+                  onChange={(e) => setR1(e.target.value)}
+                  value={r1 === null ? "" : r1}
+                />
+              </Form.Group>
+
+              {showSolution2 ? (
+                <Form.Group className="mb-3" controlId="acceleration">
+                  <Solution
+                    givenValues={givenValues1}
+                    formula="sin(i) / sin(r)"
+                    toFind="Refractive Index (μ)"
+                    insertValues={insertValues1}
+                    result={result2}
+                    // constants={constants}
+                  />
+                </Form.Group>
+              ) : null}
+
+              <Form.Group className="mb-4">
+                <Form.Label>Refractive Index</Form.Label>
+                <Form.Control
+                  readOnly
+                  type="number"
+                  placeholder={result2 === null ? "Result" : result2}
+                />
+              </Form.Group>
+            </Form>
+            <div className="button-custom-grp">
+              <Button variant="primary" onClick={calcResult2}>
+                Calculate
+              </Button>
+
+              <Button variant="dark" onClick={() => reset()} type="reset">
+                Reset
+              </Button>
+            </div>
+          </>
+        }
+
+      </>
+    )
+  }
+
+
+
+
+
+
+
 
   //adding Brewster's Angle calcular
   const BrewsterAngle = () => {
@@ -144,7 +371,7 @@ function Calculator() {
                 toFind="Brewster's angle"
                 insertValues={insertValues}
                 result={result}
-                // constants={constants}
+              // constants={constants}
               />
             </Form.Group>
           ) : null}
@@ -652,6 +879,9 @@ function Calculator() {
     switch (key) {
       case "Brewster's Angle":
         currentCall = BrewsterAngle();
+        break;
+      case "Refractive Index":
+        currentCall = RefractiveIndex();
         break;
       case "Mirror Formula":
         currentCall = MirrorFormula();
