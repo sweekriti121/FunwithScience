@@ -340,6 +340,52 @@ Binomial Expression is an expression which consistes of two terms. <br />
         </span>
       ]
     },
+    {
+      topic: "Matrices and Determinants",
+      details: [
+        "The matrix representation of a linear system is made by using all of the variable coefficients as element entries to construct the rectangular array of an appropriate size augmented matrix. Determinant is a scalar value that can be calculated from the elements of a square matrix. It is denoted as det A, det(A) or |A|. ",
+      ],
+      formula: [
+        "For a 3x3 matrix, the determinant is :",
+        <br />,
+        "|A| = a(ei − fh) − b(di − fg) + c(dh − eg)",
+        
+      ],
+      process: [
+        `The determinant of a matrix is :`,
+        <br />,
+        `For a 2×2 matrix the determinant is : ad - bc`,
+        <br />,
+        `For a 3×3 matrix the determinant is :`,
+        <br />,
+        `|A| = a(ei − fh) − b(di − fg) + c(dh − eg)`,
+      ],
+      example1: [
+        "Calculate the determinant of the 3 x 3 matrix.",
+        <br />,
+        "Given, a = 2, b = -3, c = 1 ,d = 2,",
+        <br />,
+        "e = 0, f = -1, g = 1, h = 4, i = 5",
+        <br />,
+        "Use the 3 x 3 determinant formula: ",
+        <br />,
+        "|A| = a(ei − fh) − b(di − fg) + c(dh − eg)"
+        
+      ],
+      example2: [
+        "On applying the formula,",
+        <br />,
+        "=> 2[ 0 – (-4)] + 3 [10 – (-1)] +1 [8-0]",
+        <br />,
+        "=> 2 (0+4) +3 (10 +1) + 1(8)",
+        <br />,
+        "=> 2(4) +3(11) + 8",
+        <br />,
+        "=> 8+33+8",
+        <br />,
+        <b>=&gt; 49</b>
+      ],
+    }
   ];
 
   const page = Topics.filter((data) => data.topic === topic);
@@ -2146,7 +2192,154 @@ Binomial Expression is an expression which consistes of two terms. <br />
       </>
     );
   };
+  //Matrices and Determinants
+  const MatricesDeterminants = () => {
+    const [a1,setA1] = useState(null);
+    const [a2,setA2] = useState(null);
+    const [a3,setA3] = useState(null);
+    const [b1,setB1] = useState(null);
+    const [b2,setB2] = useState(null);
+    const [b3,setB3] = useState(null);
+    const [c1,setC1] = useState(null);
+    const [c2,setC2] = useState(null);
+    const [c3,setC3] = useState(null);
+    const [result, setResult] = useState(null);
+    const reset = () => {
+      setA1(null);
+      setA2(null);
+      setA3(null);
+      setB1(null);
+      setB2(null);
+      setB3(null);
+      setC1(null);
+      setC2(null);
+      setC3(null);
+      setResult(null);
+    };
+   
+    const calcMatricesDeterminant = () => {
+      const r = ((a1*b2*c3) - (a1*b3*c2) - (a2*b1*c3) + (a2*b3*c1) + (a3*b1*c2) - (a3*b2*c1));
+      let equation = [
+        `${r}`
+      ];
+      setResult(equation);
+    };
 
+    return (
+      <>
+        <Form>
+          <Form.Group className="mb-4" controlId="text">
+            <Form.Text className="text">
+              <strong>
+                {" "}
+                To find the determinant of a 3x3 matrix, Enter the following
+                values
+              </strong>
+              <br />
+            </Form.Text>
+            </Form.Group>
+          <Form.Group className="mb-4">
+            <Form.Label>Value of a1 </Form.Label>
+            <Form.Control
+              onChange={(e) => setA1(e.target.value)}
+              type="number"
+              placeholder={"Enter the value of a1"}
+              value={a1 === null ? "" : a1}
+            />
+          </Form.Group>
+          <Form.Group className="mb-4">
+            <Form.Label>Value of a2 </Form.Label>
+            <Form.Control
+              onChange={(e) => setA2(e.target.value)}
+              type="number"
+              placeholder={"Enter the value of a2"}
+              value={a2 === null ? "" : a2}
+            />
+          </Form.Group>
+          <Form.Group className="mb-4">
+            <Form.Label>Value of a3 </Form.Label>
+            <Form.Control
+              onChange={(e) => setA3(e.target.value)}
+              type="number"
+              placeholder={"Enter the value of a3"}
+              value={a3 === null ? "" : a3}
+            />
+          </Form.Group>
+          <Form.Group className="mb-4">
+            <Form.Label>Value of b1</Form.Label>
+            <Form.Control
+              onChange={(e) => setB1(e.target.value)}
+              type="number"
+              placeholder={"Enter the value of b1"}
+              value={b1 === null ? "" : b1}
+            />
+          </Form.Group>
+          <Form.Group className="mb-4">
+            <Form.Label>Value of b2</Form.Label>
+            <Form.Control
+              onChange={(e) => setB2(e.target.value)}
+              type="number"
+              placeholder={"Enter the value of b2"}
+              value={b2 === null ? "" : b2}
+            />
+          </Form.Group>
+          <Form.Group className="mb-4">
+            <Form.Label>Value of b3</Form.Label>
+            <Form.Control
+              onChange={(e) => setB3(e.target.value)}
+              type="number"
+              placeholder={"Enter the value of b3"}
+              value={b3=== null ? "" : b3}
+            />
+          </Form.Group>
+          <Form.Group className="mb-4">
+            <Form.Label>Value of c1</Form.Label>
+            <Form.Control
+              onChange={(e) => setC1(e.target.value)}
+              type="number"
+              placeholder={"Enter the value of c1"}
+              value={c1 === null ? "" : c1}
+            />
+          </Form.Group>
+          <Form.Group className="mb-4">
+            <Form.Label>Value of c2</Form.Label>
+            <Form.Control
+              onChange={(e) => setC2(e.target.value)}
+              type="number"
+              placeholder={"Enter the value of c2"}
+              value={c2 === null ? "" : c2}
+            />
+          </Form.Group>
+          <Form.Group className="mb-4">
+            <Form.Label>Value of c3</Form.Label>
+            <Form.Control
+              onChange={(e) => setC3(e.target.value)}
+              type="number"
+              placeholder={"Enter the value of c3"}
+              value={c3=== null ? "" : c3}
+            />
+          </Form.Group>
+          <Form.Group className="mb-4">
+          <Form.Label><b>Determinant of 3x3 matrix</b></Form.Label>
+            <Form.Control
+              readOnly
+              type="number"
+              placeholder={result === null ? "Result" : result + " "}
+            />
+          </Form.Group>
+        </Form>
+        <div className="button-custom-grp">
+          <Button variant="primary" onClick={calcMatricesDeterminant}>
+            Calculate
+          </Button>
+          &nbsp;&nbsp;&nbsp;
+          <Button variant="dark" onClick={() => reset()} type="reset">
+            Reset
+          </Button>
+        </div>
+      </>
+    );
+  };
 
   //adding the calculators togather
   function calC(key) {
@@ -2175,6 +2368,9 @@ Binomial Expression is an expression which consistes of two terms. <br />
         break;
       case "Binomial":
         currentCall = Binomial();
+        break;
+      case "Matrices and Determinants":
+        currentCall = MatricesDeterminants();
         break;
       default:
         break;

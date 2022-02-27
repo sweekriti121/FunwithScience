@@ -46,9 +46,6 @@ export default function Algebra() {
     
     },
     {
-      topic: "Matrices and Determinants",
-    },
-    {
       topic: "Mathematical Induction",
     },
     {
@@ -97,6 +94,16 @@ export default function Algebra() {
       For D > 0 the roots are real and distinct.
       For D = 0 the roots are real and equal.
       For D < 0 the roots do not exist, or the roots are imaginary.`,
+    },
+    {
+      topic: "Matrices and Determinants",
+      details: `The matrix representation of a linear system is made by using all of the variable coefficients found, and use them as element entries to construct the rectangular array of an appropriate size augmented matrix.`,
+      formula: "For a 3x3 matrix, the determinant is |A| = a(ei − fh) − b(di − fg) + c(dh − eg)",
+      process:`The determinant of a matrix is :
+      The discriminant of the quadratic equation is D = b^2 - 4ac
+      For a 2×2 matrix the determinant is : ad - bc
+      For a 3×3 matrix the determinant is :
+      |A| = a(ei − fh) − b(di − fg) + c(dh − eg)`,
     }
   ];
 

@@ -48,6 +48,7 @@ import Algebra from "./Components/Algebra/algebra";
 import Geometry from "./Components/Geometry/geometry";
 import Calpermutation from "./Components/Algebra/Topic/Calculator";
 import CalcComplexNumber from "./Components/Algebra/Topic/Calculator";
+import CalcMatricesDeterminant from "./Components/Algebra/Topic/Calculator";
 import Calstraightline from "./Components/Geometry/Topic/Calculator";
 import CalCircle from "./Components/Geometry/Topic/Calculator";
 import CalHyperbola from "./Components/Geometry/Topic/Calculator";
@@ -280,6 +281,11 @@ const App = () => {
           exact
           path="/algebra/calc/:topic"
           element={<Calpermutation />}
+        ></Route>
+        <Route
+          exact
+          path="/algebra/calc/:topic"
+          element={<CalcMatricesDeterminant />}
         ></Route>
         <Route
           exact
